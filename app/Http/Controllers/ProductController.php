@@ -35,9 +35,4 @@ class ProductController extends Controller
         Product::findOrFail($id)->delete();
         return response()->json(null, 204);
     }
-    public function getNewProducts()
-    {
-        $newProducts = Product::where('new', 1)->with('tbl_brand')->get();
-        return response()->json($newProducts);
-    }
 }
